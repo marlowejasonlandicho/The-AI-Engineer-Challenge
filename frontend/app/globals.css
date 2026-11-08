@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+/*
+ * Light blue and orange, locked to a light theme so text never flips to
+ * white on a pale background. Deep navy copy sits on the sky and paper
+ * surfaces; white copy is reserved for the navy header and orange buttons.
+ */
+:root {
+  --sky: #d7eefc;
+  --sky-deep: #0c4a6e;
+  --ink: #143049;
+  --ink-soft: #3e5870;
+  --paper: #ffffff;
+  --orange: #c2410c;
+  --orange-deep: #9a3412;
+  --cream: #fff7ed;
+  --line: #f0c9a0;
+}
+
+@theme inline {
+  --color-sky: var(--sky);
+  --color-sky-deep: var(--sky-deep);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-paper: var(--paper);
+  --color-orange: var(--orange);
+  --color-orange-deep: var(--orange-deep);
+  --color-cream: var(--cream);
+  --color-line: var(--line);
+  --font-sans: var(--font-nunito);
+  --font-display: var(--font-fraunces);
+}
+
+body {
+  background:
+    radial-gradient(1100px 480px at 0% -10%, #fff4e5 0%, transparent 55%),
+    radial-gradient(900px 420px at 100% 0%, #b9e4fb 0%, transparent 52%),
+    var(--sky);
+  color: var(--ink);
+  font-family: var(--font-nunito), "Nunito", sans-serif;
+}
+
+/* Composer grows with the draft, then scrolls once it gets tall. */
+.composer-input {
+  field-sizing: content;
+  max-height: 10rem;
+}
